@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Guess Number</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script type="text/javascript">
+
+var x = Math.floor((Math.random() * 100) + 1);  
+console.log(x);
+var guess = 0
+        
+function testResults() {
+    var testVar = document.getElementById("inputbox").value
+      
+	   if (testVar < x)
+       {
+            alert ("Clue: Enter Bigger Number"); 
+        } 
+        
+        if (testVar > x)
+        {
+            alert ("Clue: Enter Smaller Number");  
+        }
+
+        if (testVar == x)
+        {
+            alert ("Congratulations ");  
+        }
+     
+        guess++
+            
+        if (guess > 10) 
+        {
+            document.getElementById("button").disabled = true;
+            alert("Sorry, Try Again. Max Trial Limit Reached");
+        } 
+}
+    
+</script>
+</HEAD>
+
+<BODY>
+
+
+    <div class="w3-card-4" style="width:50%; background-color:beige; margin:auto; text-align: center;" >
+        <header class="w3-container w3-yellow " >
+            <h1>Guess the Number!</h1>
+
+        </header>
+        
+        <br>
+        <br>
+   
+    <div class="w3-container">
+    <form>
+        <h3>Enter Number (1 - 100)</h3>
+        <h5 style="color:red" >You Got 10 Trial</h5>
+    <br>
+    <br>
+        <input type="text" id="inputbox">
+    <br>
+    <br>
+        <input type="button" class="w3-button w3-green"  id="button" value="Submit" onClick="testResults()">
+    </form> 
+    </div>
+
+    </div>
+
+</BODY>
+</HTML>
